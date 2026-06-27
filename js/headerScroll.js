@@ -2,10 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("mainHeader");
   const logoText = document.getElementById("logoText");
   const navLinks = document.querySelectorAll(".nav-link");
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
 
+  // Scroll effect
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
-      // Saat scroll ke bawah
       header.classList.remove("bg-transparent");
       header.classList.add("bg-gray-800", "shadow-lg");
       logoText.classList.remove("text-white");
@@ -15,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.add("text-blue-400");
       });
     } else {
-      // Saat di hero section
       header.classList.add("bg-transparent");
       header.classList.remove("bg-gray-800", "shadow-lg");
       logoText.classList.add("text-white");
@@ -26,4 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // Mobile menu toggle
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+    });
+  }
 });
