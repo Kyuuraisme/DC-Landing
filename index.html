@@ -12,12 +12,40 @@
     <div id="header-placeholder"></div>
 
     <script>
-      fetch("inc/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("header-placeholder").innerHTML = data;
-        });
-    </script>
+  fetch("inc/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+
+      // Jalankan script scroll setelah header dimuat
+      const header = document.getElementById("mainHeader");
+      const logoText = document.getElementById("logoText");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          header.classList.remove("bg-transparent");
+          header.classList.add("bg-gray-800", "shadow-lg");
+          logoText.classList.remove("text-white");
+          logoText.classList.add("text-blue-400");
+          navLinks.forEach(link => {
+            link.classList.remove("text-white");
+            link.classList.add("text-blue-400");
+          });
+        } else {
+          header.classList.add("bg-transparent");
+          header.classList.remove("bg-gray-800", "shadow-lg");
+          logoText.classList.add("text-white");
+          logoText.classList.remove("text-blue-400");
+          navLinks.forEach(link => {
+            link.classList.add("text-white");
+            link.classList.remove("text-blue-400");
+          });
+        }
+      });
+    });
+</script>
+
 
     <!-- Hero Section -->
     <section
@@ -34,15 +62,21 @@
       </div>
 
       <!-- Glow Text -->
-      <h2
-        class="text-5xl font-extrabold mb-4 flex justify-center space-x-1 relative z-10"
-      >
-        <?php $text = "SAINTEK-UNIPDA"; $letters = str_split($text); foreach
-        ($letters as $i => $letter) { echo "<span
-          class="text-indigo-400 animate-glow"
-          style="animation-delay: &quot; . ($i * 0.15) . &quot; s"
-          >$letter</span
-        >"; } ?>
+      <h2 id="glowText" class="text-5xl font-extrabold mb-4 flex justify-center space-x-1 relative z-10"></h2>
+
+        <script>
+        const text = "SAINTEK-UNIPDA";
+        const glowContainer = document.getElementById("glowText");
+
+        text.split("").forEach((letter, i) => {
+            const span = document.createElement("span");
+            span.textContent = letter;
+            span.className = "text-indigo-400 animate-glow";
+            span.style.animationDelay = `${i * 0.15}s`;
+            glowContainer.appendChild(span);
+        });
+        </script>
+
       </h2>
 
       <p class="text-lg text-gray-200 mb-8 relative z-10">
