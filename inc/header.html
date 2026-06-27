@@ -1,26 +1,64 @@
-<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out bg-transparent">
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-500 ease-in-out">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
     <h1 id="logoText" class="text-2xl font-bold text-white">SAINTEK Server</h1>
     
     <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-6">
-      <a href="#features" class="nav-link text-white hover:text-indigo-300">Features</a>
-      <a href="#rules" class="nav-link text-white hover:text-indigo-300">Rules</a>
-      <a href="#program" class="nav-link text-white hover:text-indigo-300">Prodi</a>
-      <a href="#contact" class="nav-link text-white hover:text-indigo-300">Contact</a>
+      <a href="#hero" class="nav-link text-white hover:text-indigo-300">Join</a>
+      <a href="#rules" class="nav-link text-white hover:text-indigo-300">Aturan</a>
+      <a href="#prodi" class="nav-link text-white hover:text-indigo-300">Prodi</a>
+      <a href="#contact" class="nav-link text-white hover:text-indigo-300">Ikuti Kami</a>
     </nav>
 
     <!-- Mobile Nav Button -->
-    <button id="menuBtn" class="md:hidden text-white focus:outline-none text-2xl">
-      ☰
-    </button>
+    <button id="menuBtn" class="md:hidden text-white focus:outline-none text-2xl">☰</button>
   </div>
 
   <!-- Mobile Nav -->
-  <nav id="mobileNav" class="hidden flex-col bg-gray-800 md:hidden">
-    <a href="#features" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Features</a>
-    <a href="#rules" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Rules</a>
-    <a href="#program" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Prodi</a>
+  <nav id="mobileNav" class="hidden flex-col md:hidden bg-transparent">
+    <a href="#hero" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Join</a>
+    <a href="#rules" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Aturan</a>
+    <a href="#prodi" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Prodi</a>
     <a href="#contact" class="nav-link px-4 py-2 text-white hover:bg-gray-700">Contact</a>
   </nav>
 </header>
+
+<script>
+  const header = document.getElementById("mainHeader");
+  const logoText = document.getElementById("logoText");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  // Scroll effect dengan transisi halus
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.remove("bg-transparent");
+      header.classList.add("bg-gray-900", "shadow-lg");
+
+      logoText.classList.remove("text-white");
+      logoText.classList.add("text-blue-400");
+
+      navLinks.forEach(link => {
+        link.classList.remove("text-white");
+        link.classList.add("text-blue-400");
+      });
+    } else {
+      header.classList.add("bg-transparent");
+      header.classList.remove("bg-gray-900", "shadow-lg");
+
+      logoText.classList.add("text-white");
+      logoText.classList.remove("text-blue-400");
+
+      navLinks.forEach(link => {
+        link.classList.add("text-white");
+        link.classList.remove("text-blue-400");
+      });
+    }
+  });
+
+  // Hamburger toggle
+  menuBtn.addEventListener("click", () => {
+    mobileNav.classList.toggle("hidden");
+  });
+</script>
