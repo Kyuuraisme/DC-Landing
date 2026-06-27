@@ -17,7 +17,7 @@
         .then((data) => {
           document.getElementById("header-placeholder").innerHTML = data;
 
-          // Load headerScroll.js setelah header dimuat
+          // Setelah header dimuat, baru load file JS scroll + hamburger
           const script = document.createElement("script");
           script.src = "js/headerScroll.js";
           document.body.appendChild(script);
@@ -71,11 +71,17 @@
       @keyframes glow {
         0%,
         100% {
-          text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+          text-shadow:
+            0 0 5px #ffffff,
+            0 0 10px #ffffff,
+            0 0 20px #ffffff;
           opacity: 0.8;
         }
         50% {
-          text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff;
+          text-shadow:
+            0 0 20px #ffffff,
+            0 0 40px #ffffff,
+            0 0 60px #ffffff;
           opacity: 1;
         }
       }
@@ -86,16 +92,26 @@
 
     <!-- Features Section -->
     <section id="features" class="py-16 bg-gray-800">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition">
+      <div
+        class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6"
+      >
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition"
+        >
           <h3 class="text-xl font-bold text-indigo-300 mb-2">Forum Belajar</h3>
           <p class="text-gray-300">Belajar Bersama, Diskusi, dan Konsultasi.</p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition">
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition"
+        >
           <h3 class="text-xl font-bold text-indigo-300 mb-2">Chat Channels</h3>
-          <p class="text-gray-300">Ikut Diskusi Tugas, Pratikum, dan Kegiatan lainnya.</p>
+          <p class="text-gray-300">
+            Ikut Diskusi Tugas, Pratikum, dan Kegiatan lainnya.
+          </p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition">
+        <div
+          class="bg-gray-700 p-6 rounded-lg shadow hover:scale-105 transition"
+        >
           <h3 class="text-xl font-bold text-indigo-300 mb-2">Announcements</h3>
           <p class="text-gray-300">Ikuti Berita dan Pemberitahuan Terbaru.</p>
         </div>
@@ -105,45 +121,68 @@
     <!-- Rules Section -->
     <section id="rules" class="py-16 bg-gray-900">
       <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-indigo-400 mb-6 text-center">📜 Aturan Server</h2>
+        <h2 class="text-3xl font-bold text-indigo-400 mb-6 text-center">
+          📜 Aturan Server
+        </h2>
         <ul class="space-y-4 text-gray-300">
-          <li class="bg-gray-800 p-4 rounded-lg shadow">1. Berbicara dengan sopan terhadap sesama mahasiswa dan dosen</li>
-          <li class="bg-gray-800 p-4 rounded-lg shadow">2. Dilarang melakukan spam (chat, sticker, gif, dll)</li>
-          <li class="bg-gray-800 p-4 rounded-lg shadow">3. Dilarang menyebarkan konten pornografi.</li>
-          <li class="bg-gray-800 p-4 rounded-lg shadow">4. Gunakan channel sesuai dengan tujuannya.</li>
-          <li class="bg-gray-800 p-4 rounded-lg shadow">5. Ikuti Ketentuan Layanan Discord.</li>
+          <li class="bg-gray-800 p-4 rounded-lg shadow">
+            1. Berbicara dengan sopan terhadap sesama mahasiswa dan dosen
+          </li>
+          <li class="bg-gray-800 p-4 rounded-lg shadow">
+            2. Dilarang melakukan spam (chat, sticker, gif, dll)
+          </li>
+          <li class="bg-gray-800 p-4 rounded-lg shadow">
+            3. Dilarang menyebarkan konten pornografi.
+          </li>
+          <li class="bg-gray-800 p-4 rounded-lg shadow">
+            4. Gunakan channel sesuai dengan tujuannya.
+          </li>
+          <li class="bg-gray-800 p-4 rounded-lg shadow">
+            5. Ikuti Ketentuan Layanan Discord.
+          </li>
         </ul>
       </div>
     </section>
 
-   <!-- Wrapper -->
-<div class="overflow-hidden sm:overflow-x-auto">
-  <div class="flex space-x-6 animate-scroll sm:animate-none min-w-max">
-    <!-- Cards -->
-    <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
-      <h3 class="text-xl font-bold text-white mb-2">Teknik Informatika</h3>
-      <p class="text-gray-300">Pemrograman, sistem informasi, teknologi terbaru.</p>
-    </div>
+    <!-- Wrapper -->
+    <div class="overflow-hidden sm:overflow-x-auto">
+      <div class="flex space-x-6 animate-scroll sm:animate-none min-w-max">
+        <!-- Cards -->
+        <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
+          <h3 class="text-xl font-bold text-white mb-2">Teknik Informatika</h3>
+          <p class="text-gray-300">
+            Pemrograman, sistem informasi, teknologi terbaru.
+          </p>
+        </div>
 
-    <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
-      <h3 class="text-xl font-bold text-white mb-2">Sistem Informasi</h3>
-      <p class="text-gray-300">Manajemen data, analisis bisnis, aplikasi web.</p>
-    </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
+          <h3 class="text-xl font-bold text-white mb-2">Sistem Informasi</h3>
+          <p class="text-gray-300">
+            Manajemen data, analisis bisnis, aplikasi web.
+          </p>
+        </div>
 
-    <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
-      <h3 class="text-xl font-bold text-white mb-2">Statistika</h3>
-      <p class="text-gray-300">Analisis data, probabilitas, dan riset ilmiah.</p>
+        <div class="bg-gray-700 p-6 rounded-lg shadow min-w-[250px]">
+          <h3 class="text-xl font-bold text-white mb-2">Statistika</h3>
+          <p class="text-gray-300">
+            Analisis data, probabilitas, dan riset ilmiah.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<style>
-    @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-scroll {
-  display: flex;
-  animation: scroll 15s linear infinite;
-}
-
-</style>
+    <style>
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-scroll {
+        display: flex;
+        animation: scroll 15s linear infinite;
+      }
+    </style>
+  </body>
+</html>
